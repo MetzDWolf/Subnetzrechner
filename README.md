@@ -1,3 +1,5 @@
+------------------------
 Projekt - Subnetzrechner
 ------------------------
-Aktualiesiert sich nun auch meine Readme???
+
+>> Präsentation am 22.12.2023
