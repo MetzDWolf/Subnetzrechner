@@ -1,4 +1,4 @@
-public class Hauptprogramm {
+public class InitMain {
 
 
     public static void main(String[] args) {
