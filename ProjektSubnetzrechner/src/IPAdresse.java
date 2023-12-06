@@ -119,7 +119,7 @@ public class IPAdresse {
 
         // Berechne und zeige die Anzahl der tatsächlichen Hosts an
         long tatsaechlicheHosts = anzahlHosts - 2; // Subtrahiere Netzadresse und Broadcastadresse
-        System.out.println("Anzahl tatsächlicher Hosts: " + tatsaechlicheHosts);
+        System.out.println("Anzahl vergebbare Hosts: " + tatsaechlicheHosts);
         System.out.println("--------------------------------------------------------------------------------");
     }
     // Methode, die überprüft, ob die Eingabe dem vorgegebenen Muster entspricht (0 - 9 und Punkt)
