@@ -1,8 +1,8 @@
-public class calculate {
-    private final ipaddress ip;
-    private final subnetmask subnetmask;
+public class Calculate {
+    private final IPAddress ip;
+    private final Subnetmask subnetmask;
 
-    public calculate(ipaddress ip, subnetmask subnetMask) {
+    public Calculate(IPAddress ip, Subnetmask subnetMask) {
         this.ip = ip;
         this.subnetmask = subnetMask;
     }
@@ -31,13 +31,7 @@ public class calculate {
 
     public void calcNumberHosts() {
         long subnetzmaskeInvertedOkt1 = 255L - Long.parseLong(subnetmask.getSubnetmaskOctec1());
-        long subnetzmaskeInvertedOkt2 = 255L - Long.parseLong(subnetmask.getSubnetzmaskeOkt2());
-        long subnetzmaskeInvertedOkt3 = 255L - Long.parseLong(subnetmask.getSubnetmaskOctec3());
-        long subnetzmaskeInvertedOkt4 = 255L - Long.parseLong(subnetmask.getSubnetmaskOctec4());
-
-        // Addiere Netz-ID und Broadcast vor der Verschiebung der Oktetten
-        long numberHosts = ((subnetzmaskeInvertedOkt1 << 24) + (subnetzmaskeInvertedOkt2 << 16) +
-                (subnetzmaskeInvertedOkt3 << 8) + subnetzmaskeInvertedOkt4) + 1;
+        long numberHosts = getNumberHosts(subnetzmaskeInvertedOkt1);
 
         System.out.println("Anzahl Hosts: " + numberHosts);
 
@@ -47,27 +41,14 @@ public class calculate {
         System.out.println("--------------------------------------------------------------------------------");
     }
 
-    // Methode, die überprüft, ob die Eingabe dem vorgegebenen Muster entspricht (0 - 9 und Punkt)
-    private boolean checkInput(String input) {
-        return input.matches("[0-9.]+");
+    private long getNumberHosts(long subnetzmaskeInvertedOkt1) {
+        long subnetzmaskeInvertedOkt2 = 255L - Long.parseLong(subnetmask.getSubnetzmaskeOkt2());
+        long subnetzmaskeInvertedOkt3 = 255L - Long.parseLong(subnetmask.getSubnetmaskOctec3());
+        long subnetzmaskeInvertedOkt4 = 255L - Long.parseLong(subnetmask.getSubnetmaskOctec4());
+
+        // Addiere Netz-ID und Broadcast vor der Verschiebung der Oktetten
+        return ((subnetzmaskeInvertedOkt1 << 24) + (subnetzmaskeInvertedOkt2 << 16) +
+                (subnetzmaskeInvertedOkt3 << 8) + subnetzmaskeInvertedOkt4) + 1;
     }
     // Methode, die überprüft, ob die eingegebene Subnetzmaske einer gültigen Subnetzmaske entspricht.
-    private boolean isValidSubnetmask(String subnetmask) {
-        String[] validMask = {"255.255.255.255", "255.255.255.254", "255.255.255.252",
-                "255.255.255.248", "255.255.255.240", "255.255.255.224",
-                "255.255.255.192", "255.255.255.128", "255.255.255.0",
-                "255.255.254.0", "255.255.252.0", "255.255.248.0",
-                "255.255.240.0", "255.255.224.0", "255.255.192.0",
-                "255.255.128.0", "255.255.0.0", "255.254.0.0",
-                "255.252.0.0", "255.248.0.0", "255.240.0.0", "255.224.0.0",
-                "255.192.0.0", "255.128.0.0", "255.0.0.0", "254.0.0.0", "252.0.0.0",
-                "248.0.0.0", "240.0.0.0", "224.0.0.0", "192.0.0.0", "128.0.0.0", "0.0.0.0"};
-
-        for (String correctMask : validMask) {
-            if (subnetmask.equals(correctMask)) {
-                return true;
-            }
-        }
-        return false;
-    }
 }

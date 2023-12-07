@@ -1,11 +1,9 @@
 import java.util.Scanner;
-
-public class ipaddress {
+public class IPAddress {
     private String octec1;
     private String octec2;
     private String octec3;
     private String octec4;
-
     public void inputIP() {
         Scanner input = new Scanner(System.in);
         boolean isValidInput = false;
@@ -46,7 +44,6 @@ public class ipaddress {
             }
         }
     }
-
     public String getOctec1() {
         return octec1;
     }
@@ -62,7 +59,6 @@ public class ipaddress {
     public String getOctec4() {
         return octec4;
     }
-
     private boolean checkInput(String eingabe) {
         return eingabe.matches("[0-9.]+");
     }
@@ -76,8 +72,9 @@ public class ipaddress {
         }
     }
     public void welcomeMessage() {
-        System.out.println("+------------------------------------------------------------------------------+" + "\n" +
-                "|                             SUBNETZRECHNER                                   |" + "\n" +
-                "+------------------------------------------------------------------------------+");
+        System.out.println("""
+                +------------------------------------------------------------------------------+
+                |                             SUBNETZRECHNER                                   |
+                +------------------------------------------------------------------------------+""");
     }
 }

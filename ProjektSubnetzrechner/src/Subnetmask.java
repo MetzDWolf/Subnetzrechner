@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class subnetmask {
+public class Subnetmask {
     private String subnetmaskOctec1;
     private String subnetmaskOctec2;
     private String subnetmaskOctec3;
@@ -84,14 +84,5 @@ public class subnetmask {
                 subnetmaskOctec2.equals("0") &&
                 subnetmaskOctec3.equals("0") &&
                 subnetmaskOctec4.equals("0");
-    }
-    // Methode, die überprüft, ob die Eingabe der Oktette zulässig ist (0 - 255)
-    private boolean validOctec(String octec) {
-        try {
-            int wert = Integer.parseInt(octec);
-            return wert >= 0 && wert <= 255;
-        } catch (NumberFormatException e) {
-            return false; // Wenn die Umwandlung in eine Zahl fehlschlägt, ist es kein gültiges Oktett
-        }
     }
 }
