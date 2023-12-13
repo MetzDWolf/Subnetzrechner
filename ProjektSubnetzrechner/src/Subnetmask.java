@@ -42,7 +42,7 @@ public class Subnetmask {
         return subnetmaskOctec1;
     }
 
-    public String getSubnetzmaskeOkt2() {
+    public String getSubnetzmaskeOctet2() {
         return subnetmaskOctec2;
     }
 
