@@ -17,7 +17,7 @@ public class Calculate {
 
     public void calcBCAddress() {
         int subnetmaskInvertedOct1 = 255 - Integer.parseInt(subnetmask.getSubnetmaskOctec1());
-        int subnetmaskInvertedOct2 = 255 - Integer.parseInt(subnetmask.getSubnetzmaskeOkt2());
+        int subnetmaskInvertedOct2 = 255 - Integer.parseInt(subnetmask.getSubnetzmaskeOctet2());
         int subnetmaskInvertedOct3 = 255 - Integer.parseInt(subnetmask.getSubnetmaskOctec3());
         int subnetmaskInvertedOct4 = 255 - Integer.parseInt(subnetmask.getSubnetmaskOctec4());
 
