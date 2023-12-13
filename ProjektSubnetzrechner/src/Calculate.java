@@ -9,8 +9,8 @@ public class Calculate {
 
     public void calcNetID() {
         int netzIdOktett1 = Integer.parseInt(ip.getOctec1()) & Integer.parseInt(subnetmask.getSubnetmaskOctec1());
-        int netzIdOktett2 = Integer.parseInt(ip.getOctec2()) & Integer.parseInt(subnetmask.getSubnetzmaskeOkt2());
-        int netzIdOktett3 = Integer.parseInt(ip.getOctec3()) & Integer.parseInt(subnetmask.getSubnetmaskOctec3());
+        int netzIdOktett2 = Integer.parseInt(ip.getOctec2()) & Integer.parseInt(subnetmask.getSubnetzmaskeOctet2());
+        int netzIdOktett3 = Integer.parseInt(ip.getOctec3()) & Integer.parseInt(subnetmask.getSubnetmaskOctet3());
         int netzIdOktett4 = Integer.parseInt(ip.getOctec4()) & Integer.parseInt(subnetmask.getSubnetmaskOctec4());
         System.out.println("Netz-ID: " + netzIdOktett1 + "." + netzIdOktett2 + "." + netzIdOktett3 + "." + netzIdOktett4);
     }
