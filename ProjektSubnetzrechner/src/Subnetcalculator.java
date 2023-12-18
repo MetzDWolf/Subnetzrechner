@@ -1,6 +1,5 @@
 public class Subnetcalculator {
 
-
     public static void main(String[] args) {
 
         // Erstelle Instanzen der Klassen
